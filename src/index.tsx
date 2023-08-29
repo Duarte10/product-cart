@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import ProductList from "./products/product-list";
@@ -8,21 +8,6 @@ import ProductDetail from "./products/product-detail";
 import Cart from "./products/cart";
 import ICartItem from "./interfaces/ICartItem";
 import { Link } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ProductList />,
-  },
-  {
-    path: "/product/:id",
-    element: <ProductDetail />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-]);
 
 export const CartContext = createContext<{
   cartItems: ICartItem[];
